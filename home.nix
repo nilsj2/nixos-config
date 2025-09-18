@@ -1,11 +1,63 @@
 { lib, pkgs, ... }:
 {
+  programs = {
+    git = {
+      enable = true;
+      userName = "Nils Juto";
+      userEmail = "nilsjuto@posteo.net";
+      extraConfig.advice.defaultBranchName = false;
+    };
+
+    helix = {
+      enable = true;
+      settings = {
+        theme = "onedark";
+      };
+    };
+
+    spotify-player = {
+      enable = true;
+      settings = {
+        enable_notify = false;
+      };
+    };
+
+    ghostty = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = {
+        theme = "OneHalfDark";
+      };
+    };
+  };
+
   home = {
     packages = with pkgs; [
-      hello
+      lazygit
+      tldr
+      tree
+      fastfetch
+      ripgrep
+      fd
+      bat
+      btop
+      exercism
+      tokei
+      poop
+      pwgen
+      nixfmt-tree
+      gdb
+
+      wl-clipboard
+      trash-cli
+
+      anki-bin
+      vesktop
+      firefox
+      thunderbird-esr
+      gnome-pomodoro
     ];
 
-    # This needs to actually be set to your username
     username = "nilsj";
     homeDirectory = "/home/nilsj";
 
