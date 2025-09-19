@@ -29,9 +29,17 @@
         theme = "OneHalfDark";
       };
     };
+
+    fish = {
+      enable = true;
+    };
   };
 
   home = {
+    sessionVariables = {
+      EDITOR = "hx";
+      CLICOLOR_FORCE=1;
+    };
     packages = with pkgs; [
       lazygit
       tldr
@@ -47,6 +55,10 @@
       pwgen
       nixfmt-tree
       gdb
+
+      gh
+      uv
+      jq
 
       wl-clipboard
       trash-cli
