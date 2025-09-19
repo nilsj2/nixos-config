@@ -29,17 +29,9 @@
         theme = "OneHalfDark";
       };
     };
-
-    fish = {
-      enable = true;
-    };
   };
 
   home = {
-    sessionVariables = {
-      EDITOR = "hx";
-      CLICOLOR_FORCE=1;
-    };
     packages = with pkgs; [
       lazygit
       tldr
