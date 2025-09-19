@@ -8,6 +8,10 @@
       extraConfig.advice.defaultBranchName = false;
     };
 
+    gh = {
+      enable = true;
+    };
+
     helix = {
       enable = true;
       settings = {
@@ -48,7 +52,6 @@
       nixfmt-tree
       gdb
 
-      gh
       uv
       jq
 
