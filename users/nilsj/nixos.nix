@@ -33,5 +33,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLCf8+K5g9NntAQuiHLXHrlD4O3H7bpqIXJttV4edaD nilsjuto@posteo.net"];
   };
 }
