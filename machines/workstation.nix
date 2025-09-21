@@ -28,4 +28,12 @@
       };
     };
   };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      AllowUsers = [ "nilsj" ];
+      PasswordAuthentication = false;
+    };
+  };
 }
