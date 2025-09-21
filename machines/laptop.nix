@@ -9,5 +9,5 @@
     ./shared.nix
     ./hardware/t480.nix
   ];
-  networking.hostName = "tkpad";
+  networking.hostName = "laptop";
 }
