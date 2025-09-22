@@ -9,6 +9,7 @@
       url = "github:9001/copyparty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -17,6 +18,7 @@
       nixpkgs,
       home-manager,
       copyparty,
+      nixos-hardware
     }:
     let
       homeManagerSetup = [
@@ -48,8 +50,10 @@
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
-          ./users/nilsj/nixos.nix
+          nixos-hardware.nixosModules.lenovo-thinkpad-t480
+          ./machines/hardware/t480.nix
           ./machines/laptop.nix
+          ./users/nilsj/nixos.nix
         ]
         ++ homeManagerSetup;
       };
