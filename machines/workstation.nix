@@ -15,7 +15,7 @@
     enable = true;
 
     accounts = {
-      nilsj.passwordFile = "/run/keys/copyparty/nilsj_password";
+      nilsj.passwordFile = "/home/nilsj/secrets/nilsj_password";
     };
 
     volumes = {
