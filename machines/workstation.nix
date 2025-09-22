@@ -54,4 +54,5 @@
       PasswordAuthentication = false;
     };
   };
+  services.fail2ban.enable = true; # SSH hardening, provides rate-limiting
 }
