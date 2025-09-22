@@ -19,11 +19,14 @@
       copyparty,
     }:
     let
-      homeManagerConfig = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.nilsj = ./users/nilsj/home-manager.nix;
-      };
+      homeManagerSetup = [
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nilsj = ./users/nilsj/home-manager.nix;
+        }
+      ];
     in
     {
       nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
@@ -39,18 +42,16 @@
               services.copyparty.enable = true;
             }
           )
-          home-manager.nixosModules.home-manager
-          homeManagerConfig
-        ];
+        ]
+        ++ homeManagerSetup;
       };
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
           ./users/nilsj/nixos.nix
           ./machines/laptop.nix
-          home-manager.nixosModules.home-manager
-          homeManagerConfig
-        ];
+        ]
+        ++ homeManagerSetup;
       };
     };
 }
