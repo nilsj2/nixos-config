@@ -33,6 +33,29 @@
     {
       nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
         modules = [
+          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.common-gpu-intel-kaby-lake
+          nixos-hardware.nixosModules.common-gpu-nvidia
+          nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.common-pc-ssd
+          (
+            { lib, ... }:
+            {
+              nixpkgs.config.allowUnfree = true;
+              hardware.nvidia = {
+                open = false;
+                modesetting.enable = lib.mkDefault true;
+                powerManagement.enable = lib.mkDefault true;
+
+                prime = {
+                  nvidiaBusId = "PCI:1:0:0";
+                  intelBusId = "PCI:0:2:0";
+                };
+              };
+              services.thermald.enable = lib.mkDefault true;
+
+            }
+          )
           ./users/nilsj/nixos.nix
           ./machines/workstation.nix
           copyparty.nixosModules.default
