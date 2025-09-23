@@ -54,6 +54,7 @@
               };
               services.thermald.enable = lib.mkDefault true;
 
+              programs.steam.enable = true;
             }
           )
           ./users/nilsj/nixos.nix
