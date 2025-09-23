@@ -18,7 +18,7 @@
       nixpkgs,
       home-manager,
       copyparty,
-      nixos-hardware
+      nixos-hardware,
     }:
     let
       homeManagerSetup = [
