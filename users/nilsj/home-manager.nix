@@ -58,7 +58,7 @@
       wl-clipboard
       trash-cli
 
-      anki-bin
+      anki
       vesktop
       firefox
       thunderbird-esr

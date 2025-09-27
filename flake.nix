@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +20,8 @@
       home-manager,
       copyparty,
       nixos-hardware,
-    }:
+      ...
+    }@inputs:
     let
       homeManagerSetup = [
         home-manager.nixosModules.home-manager
@@ -28,6 +30,12 @@
           home-manager.useUserPackages = true;
           home-manager.users.nilsj = ./users/nilsj/home-manager.nix;
         }
+      ];
+
+      overlays = [
+        (final: prev: rec {
+          anki = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.anki;
+        })
       ];
     in
     {
@@ -74,6 +82,7 @@
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
+          { nixpkgs.overlays = overlays; }
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
           ./machines/hardware/t480.nix
           ./machines/laptop.nix
