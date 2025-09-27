@@ -63,6 +63,10 @@
       firefox
       thunderbird-esr
       gnome-pomodoro
+      libreoffice-qt6-fresh
+      hunspell
+      hunspellDicts.en_GB-large
+      hunspellDicts.sv_SE
     ];
 
     username = "nilsj";
