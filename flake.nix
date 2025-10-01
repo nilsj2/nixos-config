@@ -6,10 +6,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    copyparty = {
-      url = "github:9001/copyparty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -18,7 +14,6 @@
       self,
       nixpkgs,
       home-manager,
-      copyparty,
       nixos-hardware,
       ...
     }@inputs:
@@ -33,52 +28,12 @@
       ];
 
       overlays = [
-        (final: prev: rec {
+        (final: prev: {
           anki = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.anki;
         })
       ];
     in
     {
-      nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
-        modules = [
-          nixos-hardware.nixosModules.common-cpu-intel
-          nixos-hardware.nixosModules.common-gpu-intel-kaby-lake
-          nixos-hardware.nixosModules.common-gpu-nvidia
-          nixos-hardware.nixosModules.common-pc-laptop
-          nixos-hardware.nixosModules.common-pc-ssd
-          (
-            { lib, ... }:
-            {
-              nixpkgs.config.allowUnfree = true;
-              hardware.nvidia = {
-                open = false;
-                modesetting.enable = lib.mkDefault true;
-                powerManagement.enable = lib.mkDefault true;
-
-                prime = {
-                  nvidiaBusId = "PCI:1:0:0";
-                  intelBusId = "PCI:0:2:0";
-                };
-              };
-              services.thermald.enable = lib.mkDefault true;
-
-              programs.steam.enable = true;
-            }
-          )
-          ./users/nilsj/nixos.nix
-          ./machines/workstation.nix
-          copyparty.nixosModules.default
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ copyparty.overlays.default ];
-              environment.systemPackages = [ pkgs.copyparty ];
-              services.copyparty.enable = true;
-            }
-          )
-        ]
-        ++ homeManagerSetup;
-      };
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
