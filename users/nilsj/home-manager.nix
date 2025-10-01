@@ -34,6 +34,10 @@
     };
   };
 
+  services = {
+    tldr-update.enable = true;
+  };
+
   home = {
     packages = with pkgs; [
       lazygit
