@@ -37,10 +37,11 @@
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
+          { networking.hostName = "laptop"; }
           { nixpkgs.overlays = overlays; }
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
           ./machines/hardware/t480.nix
-          ./machines/laptop.nix
+          ./machines/shared.nix
           ./users/nilsj/nixos.nix
         ]
         ++ homeManagerSetup;
