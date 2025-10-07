@@ -11,6 +11,20 @@
     "flakes"
   ];
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 3d";
+    dates = "weekly";
+    randomizedDelaySec = "45min";
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:nilsj2/nixos-config";
+    dates = "daily";
+    randomizedDelaySec = "45min";
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot.enable = true;
@@ -74,6 +88,7 @@
     kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
     kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
     kdePackages.filelight
+    kdePackages.qtmultimedia
 
     # Non-KDE graphical packages
     hardinfo2 # System information and benchmarks for Linux systems
@@ -92,16 +107,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-        FastConnectable = true;
-      };
-    };
-  };
+  # hardware.bluetooth = {
+  #   enable = true;
+  #   powerOnBoot = true;
+  #   settings = {
+  #     General = {
+  #       Experimental = true;
+  #       FastConnectable = true;
+  #     };
+  #   };
+  # };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
