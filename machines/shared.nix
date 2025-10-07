@@ -89,6 +89,7 @@
     kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
     kdePackages.filelight
     kdePackages.qtmultimedia
+    kdePackages.plasma-browser-integration
 
     # Non-KDE graphical packages
     hardinfo2 # System information and benchmarks for Linux systems
