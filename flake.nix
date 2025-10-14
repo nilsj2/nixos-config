@@ -43,6 +43,12 @@
           ./machines/hardware/t480.nix
           ./machines/shared.nix
           ./users/nilsj/nixos.nix
+          { swapDevices =[
+            {
+              device = "/var/lib/swapfile";
+              size = 16 * 1024;
+            }
+          ];}
         ]
         ++ homeManagerSetup;
       };
