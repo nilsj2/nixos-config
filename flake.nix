@@ -1,8 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +29,7 @@
 
       overlays = [
         (final: prev: {
-          anki = inputs.nixpkgs-master.legacyPackages.${prev.system}.anki;
+          anki = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.anki;
         })
       ];
     in
