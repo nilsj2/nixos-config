@@ -32,6 +32,22 @@
     timeout = 1;
   };
 
+  security.pki.certificates = [
+    ''
+      -----BEGIN CERTIFICATE-----
+      MIIBjDCCATKgAwIBAgIUKVxhZRq6OIgLqadhcrAuqnoED4YwCgYIKoZIzj0EAwIw
+      JDEQMA4GA1UEChMHcGFydHljbzEQMA4GA1UEAxMHcGFydHljbzAeFw0yNTEwMjQx
+      OTExMDBaFw0zNTEwMjIxOTExMDBaMCQxEDAOBgNVBAoTB3BhcnR5Y28xEDAOBgNV
+      BAMTB3BhcnR5Y28wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARLy7ONMl4kxuPT
+      rI8kPEnpK/EIVrMvAuGPL98w9eTeS9HzuMr9bYFe9PjIFKjPeulRMB/3oe2M+Pfm
+      T55eJfbyo0IwQDAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNV
+      HQ4EFgQUX23BtXStq7B4UQtB5OxQeLdQzEgwCgYIKoZIzj0EAwIDSAAwRQIhAMGG
+      1XLRFfWaPBbtrAB9dK/ZDtxSKgtfdO4LBh67+n4mAiB7eD4c7jWqeXkOhauz6Neh
+      AWybZSdSf9QV6Wrh90dICQ==
+      -----END CERTIFICATE-----
+    ''
+  ];
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Stockholm";
