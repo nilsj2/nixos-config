@@ -66,6 +66,7 @@
       vesktop
       firefox
       thunderbird-esr
+      evince
       gnome-pomodoro
       libreoffice-qt6-fresh
       hunspell
