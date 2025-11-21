@@ -6,6 +6,7 @@
       userName = "Nils Juto";
       userEmail = "nilsjuto@posteo.net";
       extraConfig.advice.defaultBranchName = false;
+      ignores = [ "nils-testing" ];
     };
 
     gh.enable = true;
