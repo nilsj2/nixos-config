@@ -29,7 +29,7 @@
 
       overlays = [
         (final: prev: {
-          anki = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.anki;
+          anki = inputs.nixpkgs-unstable.legacyPackages.${prev.stdenv.hostPlatform.system}.anki;
         })
       ];
     in

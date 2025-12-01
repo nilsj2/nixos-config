@@ -3,9 +3,13 @@
   programs = {
     git = {
       enable = true;
-      userName = "Nils Juto";
-      userEmail = "nilsjuto@posteo.net";
-      extraConfig.advice.defaultBranchName = false;
+      settings = {
+        user = {
+          name = "Nils Juto";
+          email = "nilsjuto@posteo.net";
+        };
+        advice.defaultBranchName = false;
+      };
       ignores = [ "nils-testing" ];
     };
 
@@ -30,7 +34,7 @@
       enable = true;
       enableFishIntegration = true;
       settings = {
-        theme = "OneHalfDark";
+        theme = "One Half Dark";
       };
     };
   };
