@@ -18,7 +18,7 @@
     helix = {
       enable = true;
       settings = {
-        theme = "onedark";
+        theme = "onelight";
         editor.soft-wrap.enable = true;
       };
     };
@@ -34,7 +34,7 @@
       enable = true;
       enableFishIntegration = true;
       settings = {
-        theme = "One Half Dark";
+        theme = "One Half Light";
       };
     };
   };
