@@ -21,7 +21,7 @@
         theme = "onelight";
         editor.soft-wrap.enable = true;
         keys.normal = {
-          space.q = "@ms{ms{i<esc>llic1::<esc>mami<esc>vh<esc>a<esc>vl<esc>";
+          space.q = "@<esc>ms{ms{i<esc>llic1::<esc>mami<esc>vh<esc>a<esc>vl<esc>";
         };
       };
     };
