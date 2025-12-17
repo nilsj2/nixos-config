@@ -107,16 +107,15 @@
     kdePackages.kolourpaint # Easy-to-use paint program
     kdePackages.ksystemlog # KDE SystemLog Application
     kdePackages.sddm-kcm # Configuration module for SDDM
-    kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
+    # kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
     kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
     kdePackages.filelight
     kdePackages.qtmultimedia
-    kdePackages.plasma-browser-integration
+    # kdePackages.plasma-browser-integration
 
     # Non-KDE graphical packages
-    hardinfo2 # System information and benchmarks for Linux systems
     vlc # Cross-platform media player and streaming server
-    wayland-utils # Wayland utilities
+    # wayland-utils # Wayland utilities
 
     rclone # for filesync
   ];

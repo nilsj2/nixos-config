@@ -26,13 +26,6 @@
       };
     };
 
-    spotify-player = {
-      enable = true;
-      settings = {
-        enable_notify = false;
-      };
-    };
-
     ghostty = {
       enable = true;
       enableFishIntegration = true;
@@ -56,16 +49,16 @@
       fd
       bat
       btop
-      exercism
+      # exercism
       tokei
       poop
       pwgen
       nixfmt-tree
       gdb
       file
-      uv
+      # uv
       jq
-      nixd
+
       zls # TODO These things should be in a shell.nix for the associated projncet like mhashimoto.
       pkg-config
       poppler_gi
@@ -74,10 +67,8 @@
       trash-cli
 
       anki
-      vesktop
       firefox
       thunderbird-esr
-      evince
       gnome-pomodoro
       libreoffice-qt6-fresh
       hunspell
