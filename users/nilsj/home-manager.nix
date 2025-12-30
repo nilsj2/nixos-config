@@ -33,6 +33,30 @@
         theme = "One Half Light";
       };
     };
+
+    anki = {
+      enable = true;
+
+      answerKeys = [
+        {
+          ease=1;
+          key = "z";
+        }
+      ];
+
+      hideBottomBar = true;
+      hideBottomBarMode = "fullscreen";
+      hideTopBar = true;
+      hideTopBarMode = "fullscreen";
+      reducedMotion = true;
+
+      style = "native";
+      videoDriver = "vulkan";
+
+      addons = [
+        pkgs.ankiAddons.review-heatmap
+      ];
+    };
   };
 
   services = {
