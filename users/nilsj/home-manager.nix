@@ -39,8 +39,12 @@
 
       answerKeys = [
         {
-          ease=1;
-          key = "z";
+          ease = 1;
+          key = "Z";
+        }
+        {
+          ease = 2;
+          key = "2";
         }
       ];
 
@@ -48,13 +52,24 @@
       hideBottomBarMode = "fullscreen";
       hideTopBar = true;
       hideTopBarMode = "fullscreen";
-      reducedMotion = true;
+      reduceMotion = true;
 
       style = "native";
       videoDriver = "vulkan";
 
+      sync = {
+        usernameFile = "/home/nilsj/Documents/anki-credentials/username";
+        keyFile = "/home/nilsj/Documents/anki-credentials/key";
+      };
+
       addons = [
         pkgs.ankiAddons.review-heatmap
+        # TODO: FSRS helper for anki plugin provides some niche things that
+        # may be useful.
+
+        # TODO: Progress bar plugin is really good, however currently "maintained"
+        # by some dude I don't trust so I should reimplement it or maybe just
+        # make my own TUI-anki client :-)
       ];
     };
   };
@@ -90,7 +105,6 @@
       wl-clipboard
       trash-cli
 
-      anki
       firefox
       thunderbird-esr
       gnome-pomodoro
