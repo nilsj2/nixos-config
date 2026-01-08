@@ -73,10 +73,10 @@
     };
   };
 
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad-vpn;
-  };
+  # services.mullvad-vpn = {
+  #   enable = true;
+  #   package = pkgs.mullvad-vpn;
+  # };
 
   # Window management
   services.xserver.enable = true;
