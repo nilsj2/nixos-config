@@ -18,7 +18,7 @@
     helix = {
       enable = true;
       settings = {
-        theme = "onelight";
+        theme = "base16_terminal";
         editor = {
           soft-wrap.enable = true;
           line-number = "relative";
