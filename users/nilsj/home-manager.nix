@@ -35,7 +35,7 @@
       enable = true;
       enableFishIntegration = true;
       settings = {
-        theme = "One Half Light";
+        theme = "light:One Half Light,dark:One Half Dark";
       };
     };
 
