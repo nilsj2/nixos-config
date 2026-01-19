@@ -19,10 +19,15 @@
       enable = true;
       settings = {
         theme = "onelight";
-        editor.soft-wrap.enable = true;
+        editor = {
+          soft-wrap.enable = true;
+          line-number = "relative";
+        };
+
         keys.normal = {
           space.q = "@<esc>ms{ms{i<esc>llic1::<esc>mami<esc>vh<esc>a<esc>vl<esc>";
         };
+
       };
     };
 
