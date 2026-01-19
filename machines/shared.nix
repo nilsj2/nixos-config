@@ -20,7 +20,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    flags = [ "--recreate-lock-file"];
+    flags = [ "--recreate-lock-file" ];
     flake = "path:/home/nilsj/nixos-config#laptop";
     dates = "daily";
     randomizedDelaySec = "45min";
