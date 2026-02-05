@@ -103,6 +103,7 @@
       # uv
       jq
       xxd
+      wget
 
       zls # TODO These things should be in a shell.nix for the associated projncet like mhashimoto.
       pkg-config
