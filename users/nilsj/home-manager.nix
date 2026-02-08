@@ -104,6 +104,8 @@
       jq
       xxd
       wget
+      zip
+      unzip
 
       wl-clipboard
       trash-cli
