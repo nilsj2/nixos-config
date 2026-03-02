@@ -110,6 +110,7 @@
       wl-clipboard
       trash-cli
 
+      librewolf
       firefox
       thunderbird-esr
       gnome-pomodoro
