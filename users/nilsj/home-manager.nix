@@ -111,7 +111,6 @@
       trash-cli
 
       librewolf
-      firefox
       thunderbird-esr
       gnome-pomodoro
       libreoffice-qt6-fresh
