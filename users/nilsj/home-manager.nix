@@ -1,6 +1,104 @@
 { lib, pkgs, ... }:
 {
+  accounts = {
+    email.accounts.Personal = {
+      primary = true;
+      address = "nils.juto@posteo.se";
+      userName = "nilsjuto@posteo.net";
+      realName = "Nils Juto";
+      passwordCommand = "secret-tool lookup email nils.juto@posteo.se";
+      signature = {
+        showSignature = "append";
+        text = ''
+          Hälsningar,
+          Nils Juto
+        '';
+      };
+
+      smtp.host = "posteo.de";
+      imap.host = "posteo.de";
+
+      aerc.enable = true;
+    };
+
+    contact = {
+      basePath = "Documents/Contacts";
+
+      accounts.Personal = {
+        remote = {
+          type = "carddav";
+          url = "https://posteo.de:8843/addressbooks/nilsjuto/default";
+          userName = "nilsjuto@posteo.net";
+          passwordCommand = [
+            "secret-tool"
+            "lookup"
+            "email"
+            "nils.juto@posteo.se"
+          ];
+        };
+
+        vdirsyncer = {
+          enable = true;
+        };
+
+        khard.enable = true;
+        khal.enable = true;
+      };
+    };
+
+    calendar = {
+      basePath = "Documents/Calendars";
+
+      accounts.Personal = {
+        remote = {
+          type = "caldav";
+          url = "https://posteo.de:8843/addressbooks/nilsjuto/default";
+          userName = "nilsjuto@posteo.net";
+          passwordCommand = [
+            "secret-tool"
+            "lookup"
+            "email"
+            "nils.juto@posteo.se"
+          ];
+        };
+
+        vdirsyncer.enable = true;
+        khal.enable = true;
+      };
+
+      accounts.School = {
+        local = {
+          type = "singlefile";
+        };
+
+        khal.enable = true;
+      };
+    };
+  };
+
   programs = {
+    aerc = {
+      enable = true;
+      extraConfig.general.unsafe-accounts-conf = true;
+
+      extraConfig = {
+        filters = {
+          "text/plain" = "wrap -w 100 | colorize";
+          "text/html" = "! w3m -I UTF-8 -T text/html";
+          # "text/calendar" = "calendar";
+        };
+
+        compose = {
+          reply-to-self = false;
+          address-book-cmd = "khard email --parsable --search-in-source-files --remove-first-line %s";
+        };
+      };
+    };
+    khard = {
+      enable = true;
+    };
+    khal.enable = true;
+    vdirsyncer.enable = true;
     git = {
       enable = true;
       settings = {
@@ -106,6 +204,8 @@
       wget
       zip
       unzip
+      libsecret
+      w3m
 
       wl-clipboard
       trash-cli
