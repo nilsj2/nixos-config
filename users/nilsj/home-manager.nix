@@ -177,6 +177,11 @@
     };
   };
 
+  xdg.terminal-exec = {
+    enable = true;
+    settings.default = [ "ghostty.desktop" ];
+  };
+
   services = {
     tldr-update.enable = true;
   };
