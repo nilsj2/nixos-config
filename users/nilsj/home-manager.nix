@@ -18,7 +18,12 @@
       smtp.host = "posteo.de";
       imap.host = "posteo.de";
 
-      aerc.enable = true;
+      aerc = {
+        enable = true;
+        extraAccounts = {
+          folders-sort = ["INBOX" "Archive" "Sent" "Drafts" "Trash"];
+        };
+      };
     };
 
     contact = {
