@@ -21,6 +21,7 @@
   system.autoUpgrade = {
     enable = true;
     flags = [ "--recreate-lock-file" ];
+    # TODO: Make this git repo public and change this to git instead.
     flake = "path:/home/nilsj/nixos-config";
     dates = "daily";
     randomizedDelaySec = "45min";
