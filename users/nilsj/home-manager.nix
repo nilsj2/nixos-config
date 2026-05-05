@@ -151,8 +151,6 @@
         }
       ];
 
-      hideBottomBar = true;
-      hideBottomBarMode = "fullscreen";
       hideTopBar = true;
       hideTopBarMode = "fullscreen";
       reduceMotion = true;
