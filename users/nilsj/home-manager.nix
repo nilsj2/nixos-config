@@ -21,7 +21,13 @@
       aerc = {
         enable = true;
         extraAccounts = {
-          folders-sort = ["INBOX" "Archive" "Sent" "Drafts" "Trash"];
+          folders-sort = [
+            "INBOX"
+            "Archive"
+            "Sent"
+            "Drafts"
+            "Trash"
+          ];
         };
       };
     };
@@ -116,10 +122,25 @@
       ignores = [ "nils-testing" ];
     };
 
+    fish = {
+      enable = true;
+      shellAliases = {
+        lg = "lazygit";
+        nxsh = "nix-shell --run fish -p";
+        "..." = "cd ../..";
+        "...." = "cd ../../..";
+        tree = "tree -C";
+      };
+      functions = {
+        zigdir = "zig any list-installed | grep (zig version) | sed 's/^[^ ]*\\t//'";
+      };
+    };
+
     gh.enable = true;
 
     helix = {
       enable = true;
+      defaultEditor = true;
       settings = {
         theme = "onelight";
         editor = {
