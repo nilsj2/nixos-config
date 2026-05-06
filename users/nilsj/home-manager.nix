@@ -1,3 +1,5 @@
+{ isWSL, ... }:
+
 { lib, pkgs, ... }:
 {
   accounts = {
@@ -211,43 +213,45 @@
   };
 
   home = {
-    packages = with pkgs; [
-      lazygit
-      tldr
-      tree
-      fastfetch
-      ripgrep
-      fd
-      bat
-      btop
-      # exercism
-      tokei
-      poop
-      pwgen
-      nixfmt-tree
-      gdb
-      file
-      # uv
-      jq
-      xxd
-      wget
-      zip
-      unzip
-      libsecret
-      w3m
-
-      wl-clipboard
-      trash-cli
-
-      librewolf
-      thunderbird-esr
-      gnome-pomodoro
-      libreoffice-qt6-fresh
-      hunspell
-      hunspellDicts.en_GB-large
-      hunspellDicts.sv_SE
-      marktext
-    ];
+    packages =
+      with pkgs;
+      [
+        lazygit
+        tldr
+        tree
+        fastfetch
+        ripgrep
+        fd
+        bat
+        btop
+        # exercism
+        tokei
+        poop
+        pwgen
+        nixfmt-tree
+        gdb
+        file
+        # uv
+        jq
+        xxd
+        wget
+        zip
+        unzip
+        libsecret
+        w3m
+        trash-cli
+      ]
+      ++ (lib.optionals (!isWSL) [
+        wl-clipboard
+        librewolf
+        thunderbird-esr
+        gnome-pomodoro
+        libreoffice-qt6-fresh
+        hunspell
+        hunspellDicts.en_GB-large
+        hunspellDicts.sv_SE
+        marktext
+      ]);
 
     username = "nilsj";
     homeDirectory = "/home/nilsj";

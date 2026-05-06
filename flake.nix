@@ -5,6 +5,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Build a custom WSL installer
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -22,6 +26,12 @@
       nixosConfigurations.thinkpad-t480 = mkSystem "thinkpad-t480" {
         system = "x86_64-linux";
         user = "nilsj";
+      };
+
+      nixosConfigurations.wsl = mkSystem "wsl" {
+        system = "x86_64-linux";
+        user = "nilsj";
+        wsl = true;
       };
     };
 }
