@@ -20,19 +20,7 @@
       smtp.host = "posteo.de";
       imap.host = "posteo.de";
 
-      aerc = {
-        enable = true;
-        extraAccounts = {
-          restrict-delete = true;
-          folders-sort = [
-            "INBOX"
-            "Archive"
-            "Sent"
-            "Drafts"
-            "Trash"
-          ];
-        };
-      };
+      aerc.enable = true;
     };
 
     contact = {
@@ -117,6 +105,17 @@
       #     d = "delete-message<Enter>";
       #   };
       # };
+
+      extraAccounts.Personal = {
+        restrict-delete = true;
+        folders-sort = [
+          "INBOX"
+          "Archive"
+          "Sent"
+          "Drafts"
+          "Trash"
+        ];
+      };
     };
 
     git = {
