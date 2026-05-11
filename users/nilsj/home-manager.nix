@@ -107,11 +107,7 @@
         };
       };
     };
-    khard = {
-      enable = true;
-    };
-    khal.enable = true;
-    vdirsyncer.enable = true;
+
     git = {
       enable = true;
       settings = {
@@ -123,6 +119,10 @@
       };
       ignores = [ "nils-testing" ];
     };
+
+    khard.enable = true;
+    khal.enable = true;
+    vdirsyncer.enable = true;
 
     fish = {
       enable = true;
@@ -137,8 +137,6 @@
         zigdir = "zig any list-installed | grep (zig version) | sed 's/^[^ ]*\\t//'";
       };
     };
-
-    gh.enable = true;
 
     helix = {
       enable = true;
@@ -190,16 +188,6 @@
         usernameFile = "/home/nilsj/Documents/anki-credentials/username";
         keyFile = "/home/nilsj/Documents/anki-credentials/key";
       };
-
-      addons = [
-        pkgs.ankiAddons.review-heatmap
-        # TODO: FSRS helper for anki plugin provides some niche things that
-        # may be useful.
-
-        # TODO: Progress bar plugin is really good, however currently "maintained"
-        # by some dude I don't trust so I should reimplement it or maybe just
-        # make my own TUI-anki client :-)
-      ];
     };
   };
 
@@ -224,14 +212,11 @@
         fd
         bat
         btop
-        # exercism
         tokei
         poop
-        pwgen
         nixfmt-tree
         gdb
         file
-        # uv
         jq
         xxd
         wget
