@@ -167,7 +167,7 @@
     };
 
     ghostty = {
-      enable = true;
+      enable = !isWSL;
       enableFishIntegration = true;
       settings = {
         theme = "light:One Half Light,dark:One Half Dark";
@@ -175,7 +175,7 @@
     };
 
     anki = {
-      enable = true;
+      enable = !isWSL;
 
       answerKeys = [
         {
@@ -203,7 +203,7 @@
   };
 
   xdg.terminal-exec = {
-    enable = true;
+    enable = !isWSL;
     settings.default = [ "ghostty.desktop" ];
   };
 
