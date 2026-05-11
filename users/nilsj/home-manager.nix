@@ -23,6 +23,7 @@
       aerc = {
         enable = true;
         extraAccounts = {
+          restrict-delete = true;
           folders-sort = [
             "INBOX"
             "Archive"
@@ -92,9 +93,9 @@
   programs = {
     aerc = {
       enable = true;
-      extraConfig.general.unsafe-accounts-conf = true;
 
       extraConfig = {
+        general.unsafe-accounts-conf = true;
         filters = {
           "text/plain" = "wrap -w 100 | colorize";
           "text/html" = "! w3m -I UTF-8 -T text/html";
@@ -106,6 +107,16 @@
           address-book-cmd = "khard email --parsable --search-in-source-files --remove-first-line %s";
         };
       };
+
+      # TODO: https://github.com/nix-community/home-manager/pull/9030
+      # extraBinds = {
+      #   messages = {
+      #     d = "read<Enter>:move Trash<Enter>";
+      #   };
+      #   "messages:folder=Trash" = {
+      #     d = "delete-message<Enter>";
+      #   };
+      # };
     };
 
     git = {
