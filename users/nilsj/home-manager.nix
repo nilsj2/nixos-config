@@ -246,7 +246,6 @@
         hunspell
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
-        marktext
       ]);
 
     username = "nilsj";
