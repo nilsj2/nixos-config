@@ -107,7 +107,6 @@
     vlc # Cross-platform media player and streaming server
     # wayland-utils # Wayland utilities
 
-    rclone # for filesync
   ];
   # Enable CUPS to print documents.
   services.printing.enable = true;

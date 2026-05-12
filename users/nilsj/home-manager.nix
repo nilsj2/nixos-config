@@ -235,6 +235,7 @@
         libsecret
         w3m
         trash-cli
+        rclone
       ]
       ++ (lib.optionals (!isWSL) [
         wl-clipboard
