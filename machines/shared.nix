@@ -74,14 +74,6 @@
     };
   };
 
-  # services.mullvad-vpn = {
-  #   enable = true;
-  #   package = pkgs.mullvad-vpn;
-  # };
-
-  # Window management
-  services.xserver.enable = true;
-
   services = {
     desktopManager.plasma6.enable = true;
     displayManager.ly.enable = true;
