@@ -170,6 +170,7 @@
       enableFishIntegration = true;
       settings = {
         theme = "light:One Half Light,dark:One Half Dark";
+        font-size = 11;
       };
     };
 
