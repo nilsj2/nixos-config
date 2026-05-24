@@ -200,6 +200,18 @@
         keyFile = "/home/nilsj/Documents/anki-credentials/key";
       };
     };
+
+    qutebrowser = {
+      enable = true;
+      extraConfig = ''
+        c.hints.chars = "arstneio"
+
+        config.bind('<Alt-Shift-u>', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='insert')
+        config.bind('pw', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='normal')
+      '';
+    };
+
+    gpg.enable = true;
   };
 
   xdg.terminal-exec = {
@@ -209,6 +221,11 @@
 
   services = {
     tldr-update.enable = true;
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      pinentry.package = pkgs.pinentry-qt;
+    };
   };
 
   home = {
@@ -237,6 +254,7 @@
         w3m
         trash-cli
         rclone
+        gcr
       ]
       ++ (lib.optionals (!isWSL) [
         wl-clipboard
@@ -248,6 +266,7 @@
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
         keepassxc
+        rofi
       ]);
 
     username = "nilsj";

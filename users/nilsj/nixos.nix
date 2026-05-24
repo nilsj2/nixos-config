@@ -4,6 +4,10 @@
   environment.localBinInPath = true;
 
   programs.fish.enable = true;
+  programs.gnupg.agent= {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-qt;
+  };
 
   # Configure custom keyboard layout and caps-backspace remapping
   services.xserver.xkb = {
