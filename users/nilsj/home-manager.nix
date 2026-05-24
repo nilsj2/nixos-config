@@ -247,6 +247,7 @@
         hunspell
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
+        keepassxc
       ]);
 
     username = "nilsj";
