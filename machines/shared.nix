@@ -79,6 +79,8 @@
     displayManager.ly.enable = true;
   };
 
+  programs.sway.enable = true;
+
   environment.systemPackages = with pkgs; [
     kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
     kdePackages.kcalc # Calculator
