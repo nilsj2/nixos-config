@@ -123,11 +123,15 @@
       settings = {
         user = {
           name = "Nils Juto";
-          email = "nilsjuto@posteo.net";
+          email = "nils.juto@posteo.se";
         };
         advice.defaultBranchName = false;
       };
       ignores = [ "nils-testing" ];
+      signing = {
+        format = "openpgp";
+        signByDefault = true;
+      };
     };
 
     khard.enable = true;
