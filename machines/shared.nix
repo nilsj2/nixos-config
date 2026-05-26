@@ -77,6 +77,7 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager.ly.enable = true;
+    xserver.enable = true;
   };
 
   programs.sway.enable = true;

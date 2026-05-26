@@ -28,6 +28,9 @@ nixpkgs.lib.nixosSystem rec {
       inputs.nixos-wsl.nixosModules.wsl
     ]
     ++ [
+      { nixpkgs.config.allowUnfree = name == "legion-y520"; }
+    ]
+    ++ [
       machineConfig
       userOSConfig
 
