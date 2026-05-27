@@ -13,6 +13,9 @@
   services.fstrim.enable = true;
   services.thermald.enable = true;
 
+  services.desktopManager.plasma6.enable = false;
+  services.desktopManager.gnome.enable = true;
+
   # hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {

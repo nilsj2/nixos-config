@@ -75,8 +75,10 @@
   };
 
   services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.ly.enable = true;
+    # Should probably use gnome everywhere, postponing this.
+    # Maybe switch to sway on t480.
+    desktopManager.plasma6.enable = lib.mkDefault true;
+    displayManager.gdm.enable = true;
     xserver.enable = true;
   };
 
