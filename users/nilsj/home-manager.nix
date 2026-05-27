@@ -216,11 +216,23 @@
     };
 
     gpg.enable = true;
+
+    keepassxc = {
+      enable = true;
+      autostart = true;
+      settings = {
+        Browser.Enabled = true;
+        Security.LockDatabaseIdle = false;
+      };
+    };
   };
 
-  xdg.terminal-exec = {
-    enable = !isWSL;
-    settings.default = [ "ghostty.desktop" ];
+  xdg = {
+    terminal-exec = {
+      enable = !isWSL;
+      settings.default = [ "ghostty.desktop" ];
+    };
+    autostart.enable = true;
   };
 
   services = {
@@ -269,7 +281,6 @@
         hunspell
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
-        keepassxc
         rofi
       ]);
 
