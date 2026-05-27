@@ -209,6 +209,7 @@
       enable = true;
       extraConfig = ''
         c.hints.chars = "arstneio"
+        c.scrolling.smooth = True
 
         config.bind('<Alt-Shift-u>', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='insert')
         config.bind('pw', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='normal')
