@@ -244,6 +244,22 @@
     };
   };
 
+  wayland.windowManager.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    # TODO: Investigate whether an issue was ever opened
+    # https://discourse.nixos.org/t/services-xserver-xkb-extralayouts-doesnt-seem-to-be-compatible-with-sway/46128/4
+    checkConfig = false;
+    config = {
+      modifier = "Mod4";
+      terminal = "ghostty";
+      input."*" = {
+        xkb_layout = "se-colemak-dhk";
+        natural_scroll = "enabled";
+      };
+    };
+  };
+
   home = {
     packages =
       with pkgs;
