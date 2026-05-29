@@ -262,6 +262,29 @@
       };
 
       output.HDMI-A-1.mode = "1920x1080@144Hz";
+
+      assigns = {
+        "1: web" = [
+          { app_id = "librewolf"; }
+          { app_id = "org.qutebrowser.qutebrowser"; }
+        ];
+        "2: mail" = [
+          {
+            app_id = "com.mitchellh.ghostty";
+            title = "aerc";
+          }
+        ];
+        "3: dev" = [ { app_id = "com.mitchellh.ghostty"; } ];
+        "4: anki" = [ { app_id = "anki"; } ];
+      };
+
+      startup = [
+        { command = "qutebrowser"; }
+        # TODO
+        # { command = ''ghostty +new-window --title="aerc" -e "/etc/profiles/per-user/nilsj/bin/aerc"''; }
+        { command = "ghostty"; }
+        { command = "anki"; }
+      ];
     };
     extraConfig = if isNvidiaGPU then "output eDP-1 disable" else "";
     extraOptions = if isNvidiaGPU then [ "--unsupported-gpu" ] else [ ];
