@@ -1,4 +1,4 @@
-{ isWSL, ... }:
+{ isWSL, isNvidiaGPU, ... }:
 
 { lib, pkgs, ... }:
 {
@@ -255,9 +255,16 @@
       terminal = "ghostty";
       input."*" = {
         xkb_layout = "se-colemak-dhk";
+      };
+
+      input."type:touchpad" = {
         natural_scroll = "enabled";
       };
+
+      output.HDMI-A-1.mode = "1920x1080@144Hz";
     };
+    extraConfig = if isNvidiaGPU then "output eDP-1 disable" else "";
+    extraOptions = if isNvidiaGPU then [ "--unsupported-gpu" ] else [ ];
   };
 
   home = {

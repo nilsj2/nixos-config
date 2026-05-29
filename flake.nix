@@ -31,6 +31,7 @@
       nixosConfigurations.legion-y520 = mkSystem "legion-y520" {
         system = "x86_64-linux";
         user = "nilsj";
+        nvidia = true;
       };
 
       nixosConfigurations.wsl = mkSystem "wsl" {

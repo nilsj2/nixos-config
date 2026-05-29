@@ -9,10 +9,12 @@ name:
   system,
   user,
   wsl ? false,
+  nvidia ? false,
 }:
 
 let
   isWSL = wsl;
+  isNvidiaGPU = nvidia;
 
   machineConfig = ../machines/${name}.nix;
   userOSConfig = ../users/${user}/nixos.nix;
@@ -28,9 +30,8 @@ nixpkgs.lib.nixosSystem rec {
       inputs.nixos-wsl.nixosModules.wsl
     ]
     ++ [
-      { nixpkgs.config.allowUnfree = name == "legion-y520"; }
-    ]
-    ++ [
+      { nixpkgs.config.allowUnfree = isNvidiaGPU; }
+
       machineConfig
       userOSConfig
 
@@ -40,6 +41,7 @@ nixpkgs.lib.nixosSystem rec {
         home-manager.useUserPackages = true;
         home-manager.users.${user} = import userHMConfig {
           isWSL = isWSL;
+          isNvidiaGPU = isNvidiaGPU;
         };
       }
 
@@ -51,6 +53,7 @@ nixpkgs.lib.nixosSystem rec {
           currentSystemName = name;
           currentSystemUser = user;
           isWSL = isWSL;
+          isNvidiaGPU = isNvidiaGPU;
           inputs = inputs;
         };
       }
