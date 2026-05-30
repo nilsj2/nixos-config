@@ -186,21 +186,18 @@
           ease = 1;
           key = "Z";
         }
-        {
-          ease = 2;
-          key = "2";
-        }
       ];
 
       hideTopBar = true;
       hideTopBarMode = "fullscreen";
       reduceMotion = true;
+      minimalistMode = true;
 
       style = "native";
-      videoDriver = "vulkan";
+      # videoDriver = "vulkan"; # NOTE: Broken since 26.05
 
-      sync = {
-        usernameFile = "/home/nilsj/Documents/anki-credentials/username";
+      profiles."Nils".sync = {
+        username = "nilsjuto@posteo.net";
         keyFile = "/home/nilsj/Documents/anki-credentials/key";
       };
     };

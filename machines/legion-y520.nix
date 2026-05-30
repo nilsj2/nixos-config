@@ -15,6 +15,9 @@
 
   services.desktopManager.plasma6.enable = false;
   services.desktopManager.gnome.enable = true;
+  # TODO: Test if gdm still is necessary. (probably)
+  services.displayManager.ly.enable = false;
+  services.displayManager.gdm.enable = true;
   services.displayManager.gdm.autoSuspend = false;
 
   # hardware.graphics.enable = true;
@@ -23,7 +26,7 @@
     modesetting.enable = true;
     open = false; # GTX 1060 is older than turing(GTX 1660)
     nvidiaSettings = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
     prime = {
       sync.enable = true;
