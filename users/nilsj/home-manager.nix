@@ -318,17 +318,22 @@
         rclone
         gcr
       ]
-      ++ (lib.optionals (!isWSL) [
-        wl-clipboard
-        librewolf
-        thunderbird-esr
-        gnome-pomodoro
-        libreoffice-qt6-fresh
-        hunspell
-        hunspellDicts.en_GB-large
-        hunspellDicts.sv_SE
-        rofi
-      ]);
+      ++ (
+        lib.optionals (!isWSL) [
+          wl-clipboard
+          librewolf
+          thunderbird-esr
+          gnome-pomodoro
+          libreoffice-qt6-fresh
+          hunspell
+          hunspellDicts.en_GB-large
+          hunspellDicts.sv_SE
+          rofi
+        ]
+        ++ (lib.optionals (!isWSL && isNvidiaGPU) [
+          vesktop
+        ])
+      );
 
     username = "nilsj";
     homeDirectory = "/home/nilsj";
