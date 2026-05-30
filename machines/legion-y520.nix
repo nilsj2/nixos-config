@@ -15,6 +15,7 @@
 
   services.desktopManager.plasma6.enable = false;
   services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.autoSuspend = false;
 
   # hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
