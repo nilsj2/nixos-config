@@ -82,7 +82,12 @@
     xserver.enable = true;
   };
 
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
