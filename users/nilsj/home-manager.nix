@@ -261,7 +261,7 @@
       output.HDMI-A-1.mode = "1920x1080@144Hz";
 
       assigns = {
-        "1: web" = [
+        "1: http" = [
           { app_id = "librewolf"; }
           { app_id = "org.qutebrowser.qutebrowser"; }
         ];
@@ -278,7 +278,7 @@
       startup = [
         { command = "qutebrowser"; }
         { command = "ghostty +new-window --title=aerc -e aerc"; }
-        { command = "exec swaymsg 'workspace 3:dev; exec ghostty'"; }
+        { command = "exec swaymsg 'workspace 3: code; exec ghostty'"; }
         { command = "anki"; }
         { command = "keepassxc"; }
       ];
