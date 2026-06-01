@@ -271,16 +271,16 @@
             title = "aerc";
           }
         ];
-        "3: dev" = [ { app_id = "com.mitchellh.ghostty"; } ];
         "4: anki" = [ { app_id = "anki"; } ];
+        "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
 
       startup = [
         { command = "qutebrowser"; }
-        # TODO
-        # { command = ''ghostty +new-window --title="aerc" -e "/etc/profiles/per-user/nilsj/bin/aerc"''; }
-        { command = "ghostty"; }
+        { command = "ghostty +new-window --title=aerc -e aerc"; }
+        { command = "exec swaymsg 'workspace 3:dev; exec ghostty'"; }
         { command = "anki"; }
+        { command = "keepassxc"; }
       ];
     };
     extraConfig = if isNvidiaGPU then "output eDP-1 disable" else "";
