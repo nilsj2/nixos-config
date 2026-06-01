@@ -287,6 +287,20 @@
     extraOptions = if isNvidiaGPU then [ "--unsupported-gpu" ] else [ ];
   };
 
+  systemd.user.services.cpp-mount = {
+    Unit = {
+      Description = "Copyparty rclone setup";
+      After = [ "network-online.target" ];
+    };
+    Service = {
+      Type = "notify";
+      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p %h/cpp";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes --dir-cache-time 5s nilssrv-dav: \"%h/cpp\"";
+      ExecStop="/run/wrappers/bin/fusermount -u %h/cpp/%i";
+    };
+    Install.WantedBy = [ "default.target" ];
+  };
+
   home = {
     packages =
       with pkgs;
