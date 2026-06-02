@@ -257,6 +257,10 @@
       input."type:touchpad" = {
         natural_scroll = "enabled";
       };
+      input."type:pointer" = {
+        accel_profile = "flat";
+        pointer_accel = "0.1";
+      };
 
       output.HDMI-A-1.mode = "1920x1080@144Hz";
 
