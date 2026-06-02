@@ -206,9 +206,34 @@
       enable = true;
       extraConfig = ''
         c.hints.chars = "arstneio"
+        c.scrolling.smooth = True
 
         config.bind('<Alt-Shift-u>', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='insert')
         config.bind('pw', 'spawn --userscript qute-keepassxc --key 9C8CABD21F883265A81D231F433555B09CA77C0D', mode='normal')
+
+        c.url.searchengines = {
+          "DEFAULT": "https://duckduckgo.com/?q={}",
+          "g": "https://www.google.ie/search?q={}",
+          "m": "https://www.google.com/maps?q={}",
+          "y": "http://www.youtube.com/results?search_query={}",
+          "tw": "https://www.twitch.tv/search?term={}",
+          "ws": "https://sv.wikipedia.org/w/index.php?search={}",
+          "we": "https://en.wikipedia.org/w/index.php?search={}",
+          "lol": "https://leagueoflegends.fandom.com/wiki/{}",
+          "reddit": "https://www.reddit.com/search/?q={}",
+          "sub": "https://www.reddit.com/r/{}",
+          "mdn": "https://developer.mozilla.org/en-US/search?q={}",
+          "sv": "https://svenska.se/tre/?sok={}",
+          "en": "https://www.merriam-webster.com/dictionary/{}",
+          "syn": "https://www.synonymer.se/sv-syn/{}",
+          "u": "https://u.gg/lol/profile/euw1/{}/overview",
+          "ensve": "https://sv.glosbe.com/en/sv/{}",
+          "sveen": "https://sv.glosbe.com/sv/en/{}",
+          "osrs": "https://oldschool.runescape.wiki/w/{}",
+          "ol": "https://onelook.com/?w={}",
+          "counter": "https://u.gg/lol/champions/{}/counter?region=euw1&rank=diamond_plus",
+          "pro": "https://probuildstats.com/champion/{}",
+        }
       '';
     };
 
