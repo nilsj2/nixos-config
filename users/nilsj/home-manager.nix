@@ -281,6 +281,7 @@
 
       input."type:touchpad" = {
         natural_scroll = "enabled";
+        tap = "enabled";
       };
       input."type:pointer" = {
         accel_profile = "flat";
