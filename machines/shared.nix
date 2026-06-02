@@ -88,6 +88,7 @@
   };
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
+  services.displayManager.defaultSession = "sway";
 
   environment.systemPackages = with pkgs; [
     kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
