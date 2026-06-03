@@ -307,7 +307,7 @@
 
       startup = [
         { command = "qutebrowser"; }
-        { command = "ghostty +new-window --title=aerc -e aerc"; }
+        { command = "ghostty +new-window --title=aerc -e fish -c aerc"; }
         { command = "exec swaymsg 'workspace 3: code; exec ghostty'"; }
         { command = "anki"; }
         { command = "keepassxc"; }
