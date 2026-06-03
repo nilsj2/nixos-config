@@ -173,7 +173,7 @@
       enable = !isWSL;
       enableFishIntegration = true;
       settings = {
-        theme = "light:One Half Light,dark:One Half Dark";
+        theme = "light:Builtin Light,dark:Builtin Dark";
         font-size = 11;
       };
     };
