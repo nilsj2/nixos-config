@@ -214,7 +214,7 @@
         c.url.searchengines = {
           "DEFAULT": "https://duckduckgo.com/?q={}",
           "g": "https://www.google.ie/search?q={}",
-          "m": "https://www.google.com/maps?q={}",
+          "m": "https://www.openstreetmap.org/search?query={}",
           "y": "http://www.youtube.com/results?search_query={}",
           "tw": "https://www.twitch.tv/search?term={}",
           "ws": "https://sv.wikipedia.org/w/index.php?search={}",
