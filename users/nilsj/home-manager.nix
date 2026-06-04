@@ -308,7 +308,6 @@
           }
         ];
         "4: anki" = [ { app_id = "anki"; } ];
-        "5: talk" = [ { app_id = "vesktop"; } ];
         "6: steam" = [ { class = "steam"; } ];
         "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
@@ -321,7 +320,6 @@
         { command = "keepassxc"; }
       ]
       ++ lib.optionals (isNvidiaGPU) [
-        { command = "vesktop"; }
         { command = "steam"; }
       ];
 
@@ -399,9 +397,6 @@
           hunspellDicts.sv_SE
           rofi
         ]
-        ++ (lib.optionals (!isWSL && isNvidiaGPU) [
-          vesktop
-        ])
       );
 
     username = "nilsj";
