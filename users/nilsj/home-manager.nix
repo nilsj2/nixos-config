@@ -96,26 +96,13 @@
         };
       };
 
-      # TODO: https://github.com/nix-community/home-manager/pull/9030
-      # extraBinds = {
-      #   messages = {
-      #     d = "read<Enter>:move Trash<Enter>";
-      #   };
-      #   "messages:folder=Trash" = {
-      #     d = "delete-message<Enter>";
-      #   };
-      # };
-
-      extraAccounts.Personal = {
-        restrict-delete = true;
-        folders-sort = [
-          "INBOX"
-          "Archive"
-          "Sent"
-          "Drafts"
-          "Trash"
-        ];
-      };
+      extraAccounts.Personal.folders-sort = [
+        "INBOX"
+        "Archive"
+        "Sent"
+        "Drafts"
+        "Trash"
+      ];
     };
 
     git = {
@@ -256,6 +243,21 @@
       settings.default = [ "ghostty.desktop" ];
     };
     autostart.enable = true;
+
+    # Workaround for: https://github.com/nix-community/home-manager/pull/9030
+    configFile."aerc/binds.conf" = {
+      target = "aerc/binds.conf"; # I can't make this work without this.
+      text = lib.strings.concatStrings [
+        (builtins.readFile ./aerc/default-binds.conf)
+        ''
+          [messages]
+          d = :read<Enter>:mv Trash<Enter>
+
+          [messages:folder=Trash]
+          d = :delete-message<Enter>
+        ''
+      ];
+    };
   };
 
   services = {
