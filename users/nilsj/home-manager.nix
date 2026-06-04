@@ -233,6 +233,7 @@
           "ol": "https://onelook.com/?w={}",
           "counter": "https://u.gg/lol/champions/{}/counter?region=euw1&rank=diamond_plus",
           "pro": "https://probuildstats.com/champion/{}",
+          "hm": "https://search.nixos.org/options?query={}&source=home_manager",
         }
       '';
     };
