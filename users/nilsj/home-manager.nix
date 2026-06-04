@@ -198,7 +198,7 @@
 
       profiles."Nils".sync = {
         username = "nilsjuto@posteo.net";
-        keyFile = "/home/nilsj/Documents/anki-credentials/key";
+        keyFile = "/home/nilsj/.secrets/anki_key";
       };
     };
 
