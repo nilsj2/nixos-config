@@ -305,8 +305,8 @@
           }
         ];
         "4: anki" = [ { app_id = "anki"; } ];
-        "5: talk" = [ { app_id = "vesktop"; }];
-        "6: steam" = [ { class = "steam"; }];
+        "5: talk" = [ { app_id = "vesktop"; } ];
+        "6: steam" = [ { class = "steam"; } ];
         "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
 
@@ -316,7 +316,8 @@
         { command = "exec swaymsg 'workspace 3: code; exec ghostty'"; }
         { command = "anki"; }
         { command = "keepassxc"; }
-      ] ++ lib.optionals (isNvidiaGPU) [
+      ]
+      ++ lib.optionals (isNvidiaGPU) [
         { command = "vesktop"; }
         { command = "steam"; }
       ];
