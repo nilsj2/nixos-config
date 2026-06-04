@@ -15,7 +15,7 @@
     automatic = true;
     options = "--delete-older-than 3d";
     dates = "weekly";
-    randomizedDelaySec = "45min";
+    randomizedDelaySec = "15min";
   };
 
   system.autoUpgrade = {
@@ -24,7 +24,7 @@
     # TODO: Make this git repo public and change this to git instead.
     flake = "path:/home/nilsj/nixos-config";
     dates = "daily";
-    randomizedDelaySec = "45min";
+    randomizedDelaySec = "15min";
   };
 
   # Use the systemd-boot EFI boot loader.
