@@ -308,7 +308,6 @@
           }
         ];
         "4: anki" = [ { app_id = "anki"; } ];
-        "6: steam" = [ { class = "steam"; } ];
         "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
 
@@ -318,9 +317,6 @@
         { command = "exec swaymsg 'workspace 3: code; exec ghostty'"; }
         { command = "anki"; }
         { command = "keepassxc"; }
-      ]
-      ++ lib.optionals (isNvidiaGPU) [
-        { command = "steam"; }
       ];
 
       keybindings = lib.mkOptionDefault {
