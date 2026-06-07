@@ -31,6 +31,7 @@ nixpkgs.lib.nixosSystem rec {
     ]
     ++ [
       { nixpkgs.config.allowUnfree = isNvidiaGPU; }
+      { networking.hostName = name; }
 
       machineConfig
       userOSConfig

@@ -37,6 +37,4 @@
   };
 
   programs.steam.enable = true;
-
-  networking.hostName = "legion-y520";
 }
