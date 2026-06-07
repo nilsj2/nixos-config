@@ -297,7 +297,7 @@
       output.HDMI-A-1.mode = "1920x1080@144Hz";
 
       assigns = {
-        "1: http" = [
+        "1: html" = [
           { app_id = "librewolf"; }
           { app_id = "org.qutebrowser.qutebrowser"; }
         ];
