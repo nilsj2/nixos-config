@@ -9,13 +9,6 @@
       userName = "nilsjuto@posteo.net";
       realName = "Nils Juto";
       passwordCommand = "secret-tool lookup email nils.juto@posteo.se";
-      signature = {
-        showSignature = "append";
-        text = ''
-          Hälsningar,
-          Nils Juto
-        '';
-      };
 
       smtp.host = "posteo.de";
       imap.host = "posteo.de";
@@ -103,6 +96,23 @@
         "Drafts"
         "Trash"
       ];
+
+      templates = {
+        new_message = ''
+            Goddag,
+
+
+
+            Vänliga hälsningar,
+            Nils
+          '';
+
+        quoted_reply = ''
+          Hej igen,
+
+          {{quote .OriginalText}}
+          '';
+      };
     };
 
     git = {
