@@ -99,19 +99,19 @@
 
       templates = {
         new_message = ''
-            Goddag,
+          Goddag,
 
 
 
-            Vänliga hälsningar,
-            Nils
-          '';
+          Vänliga hälsningar,
+          Nils
+        '';
 
         quoted_reply = ''
           Hej igen,
 
           {{quote .OriginalText}}
-          '';
+        '';
       };
     };
 
@@ -391,19 +391,17 @@
         playerctl
         brightnessctl
       ]
-      ++ (
-        lib.optionals (!isWSL) [
-          wl-clipboard
-          librewolf
-          thunderbird-esr
-          gnome-pomodoro
-          libreoffice-qt6-fresh
-          hunspell
-          hunspellDicts.en_GB-large
-          hunspellDicts.sv_SE
-          rofi
-        ]
-      );
+      ++ (lib.optionals (!isWSL) [
+        wl-clipboard
+        librewolf
+        thunderbird-esr
+        gnome-pomodoro
+        libreoffice-qt6-fresh
+        hunspell
+        hunspellDicts.en_GB-large
+        hunspellDicts.sv_SE
+        rofi
+      ]);
 
     username = "nilsj";
     homeDirectory = "/home/nilsj";
