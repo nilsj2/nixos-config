@@ -255,6 +255,19 @@
       settings.default = [ "ghostty.desktop" ];
     };
 
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "org.qutebrowser.qutebrowser.desktop";
+        "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+        "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+        "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
+        "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+        "audio/*" = "vlc.desktop";
+        "video/*" = "vlc.desktop";
+      };
+    };
+
     # Workaround for: https://github.com/nix-community/home-manager/pull/9030
     configFile."aerc/binds.conf" = {
       target = "aerc/binds.conf"; # I can't make this work without this.
