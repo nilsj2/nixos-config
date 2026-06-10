@@ -318,6 +318,8 @@
           }
         ];
         "4: anki" = [ { app_id = "anki"; } ];
+        "6: steam" = [ { class = "steam"; } ];
+        "7: talk" = [ {app_id = "vesktop"; }];
         "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
 
@@ -327,6 +329,8 @@
         { command = "exec swaymsg 'workspace 3: code; exec ghostty'"; }
         { command = "anki"; }
         { command = "keepassxc"; }
+        { command = "steam"; }
+        { command = "vesktop"; }
       ];
 
       keybindings = lib.mkOptionDefault {
@@ -401,6 +405,8 @@
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
         rofi
+      ]) ++ (lib.optionals (isNvidiaGPU) [
+        vesktop
       ]);
 
     username = "nilsj";
