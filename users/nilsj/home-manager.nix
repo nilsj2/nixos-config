@@ -392,6 +392,7 @@
         gcr
         playerctl
         brightnessctl
+        rofi
       ]
       ++ (lib.optionals (!isWSL) [
         wl-clipboard
@@ -402,7 +403,7 @@
         hunspell
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
-        rofi
+        vlc
       ])
       ++ (lib.optionals (isNvidiaGPU) [
         vesktop
