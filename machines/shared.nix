@@ -20,7 +20,10 @@
 
   system.autoUpgrade = {
     enable = true;
-    flags = [ "--update-input" "nixpkgs" ];
+    flags = [
+      "--update-input"
+      "nixpkgs"
+    ];
     flake = "path:/home/nilsj/nixos-config";
     dates = "daily";
     randomizedDelaySec = "15min";

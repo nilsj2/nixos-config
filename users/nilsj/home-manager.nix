@@ -317,7 +317,7 @@
         ];
         "4: anki" = [ { app_id = "anki"; } ];
         "6: steam" = [ { class = "steam"; } ];
-        "7: talk" = [ {app_id = "vesktop"; }];
+        "7: talk" = [ { app_id = "vesktop"; } ];
         "10: pass" = [ { app_id = "org.keepassxc.KeePassXC"; } ];
       };
 
@@ -403,7 +403,8 @@
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
         rofi
-      ]) ++ (lib.optionals (isNvidiaGPU) [
+      ])
+      ++ (lib.optionals (isNvidiaGPU) [
         vesktop
       ]);
 
