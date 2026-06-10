@@ -200,7 +200,7 @@
     };
 
     qutebrowser = {
-      enable = true;
+      enable = !isWSL;
       extraConfig = ''
         c.hints.chars = "arstneio"
         c.scrolling.smooth = True
