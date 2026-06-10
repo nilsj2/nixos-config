@@ -242,7 +242,6 @@
 
     keepassxc = {
       enable = true;
-      autostart = true;
       settings = {
         Browser.Enabled = true;
         Security.LockDatabaseIdle = false;
@@ -255,7 +254,6 @@
       enable = !isWSL;
       settings.default = [ "ghostty.desktop" ];
     };
-    autostart.enable = true;
 
     # Workaround for: https://github.com/nix-community/home-manager/pull/9030
     configFile."aerc/binds.conf" = {
