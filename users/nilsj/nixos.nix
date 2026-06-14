@@ -33,6 +33,30 @@
     };
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
+  services.displayManager.defaultSession = "sway";
+
+  security.pki.certificates = [
+    ''
+      -----BEGIN CERTIFICATE-----
+      MIIBjDCCATKgAwIBAgIUUef3uae0wifz6Nw/Z3aEgE9k/+AwCgYIKoZIzj0EAwIw
+      JDEQMA4GA1UEChMHcGFydHljbzEQMA4GA1UEAxMHcGFydHljbzAeFw0yNTEwMjgx
+      NjA1MDBaFw0zNTEwMjYxNjA1MDBaMCQxEDAOBgNVBAoTB3BhcnR5Y28xEDAOBgNV
+      BAMTB3BhcnR5Y28wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQju/kt9HxHehl9
+      VgNzrM4b88q6DpQzjmfhfjpO7F1jMsXJfA4WnVG1jBNlYRFaO8yc03/A+oRXVaI8
+      j3vatK2mo0IwQDAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNV
+      HQ4EFgQUQTJlJjouegj1Q6KhnhfI+xCQ9MMwCgYIKoZIzj0EAwIDSAAwRQIgTCbx
+      6tO2lBNn0A9dTPfxbMYQl3S+KgBhpDFuK5bhiiMCIQCbdVIw7huOiGO4yaO1jrmz
+      u/4JeBRKAhg1LkaLiFhdYw==
+      -----END CERTIFICATE-----
+    ''
+  ];
+
   users.users.nilsj = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
