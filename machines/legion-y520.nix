@@ -13,10 +13,10 @@
   services.fstrim.enable = true;
   services.thermald.enable = true;
 
-  services.desktopManager.plasma6.enable = false;
+  services.desktopManager.plasma6.enable = lib.mkForce false;
   services.desktopManager.gnome.enable = true;
   # TODO: Test if gdm still is necessary. (probably)
-  services.displayManager.ly.enable = false;
+  services.displayManager.ly.enable = lib.mkForce false;
   services.displayManager.gdm.enable = true;
   services.displayManager.gdm.autoSuspend = false;
 

@@ -76,13 +76,8 @@
     };
   };
 
-  services = {
-    # Should probably use gnome everywhere, postponing this.
-    # Maybe switch to sway on t480.
-    desktopManager.plasma6.enable = lib.mkDefault true;
-    displayManager.ly.enable = lib.mkDefault true;
-    xserver.enable = true;
-  };
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.ly.enable = true;
 
   programs.sway = {
     enable = true;
