@@ -157,6 +157,11 @@
         editor = {
           soft-wrap.enable = true;
           line-number = "relative";
+
+          auto-save = {
+            after-delay.enable = true;
+            after-delay.timeout = 150;
+          };
         };
 
         keys.normal = {
