@@ -143,6 +143,7 @@
         "..." = "cd ../..";
         "...." = "cd ../../..";
         tree = "tree -C";
+        cdd = "cd (mktemp -d)";
       };
       functions = {
         zigdir = "zig any list-installed | grep (zig version) | sed 's/^[^ ]*\\t//'";
