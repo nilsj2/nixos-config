@@ -154,10 +154,11 @@
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = "onelight";
+        theme = "ayu_light";
         editor = {
           soft-wrap.enable = true;
           line-number = "relative";
+          scrolloff = 3;
 
           auto-save = {
             after-delay.enable = true;
@@ -176,7 +177,7 @@
       enable = !isWSL;
       enableFishIntegration = true;
       settings = {
-        theme = "light:Builtin Light,dark:Builtin Dark";
+        theme = "light:Ayu Light,dark:Ayu";
         font-size = 11;
       };
     };
