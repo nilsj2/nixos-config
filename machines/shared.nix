@@ -63,7 +63,6 @@
   services.desktopManager.plasma6.enable = true;
   services.displayManager.ly.enable = true;
 
-
   # Enable sound.
   services.pipewire = {
     enable = true;
