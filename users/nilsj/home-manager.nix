@@ -123,6 +123,7 @@
           email = "nils.juto@posteo.se";
         };
         advice.defaultBranchName = false;
+        help.autocorrect = true;
       };
       ignores = [ "nils-testing" ];
       signing = {
