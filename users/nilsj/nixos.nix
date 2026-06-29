@@ -1,7 +1,12 @@
 { pkgs, inputs, ... }:
 
 {
-  environment.localBinInPath = true;
+  environment = {
+    localBinInPath = true;
+    variables = {
+      ZIG_BUILD_ERROR_STYLE = "minimal_clear";
+    };
+  };
 
   programs.fish.enable = true;
   programs.gnupg.agent = {
