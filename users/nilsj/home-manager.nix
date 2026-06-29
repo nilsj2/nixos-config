@@ -143,7 +143,6 @@
         nxsh = "nix-shell --run fish -p";
         "..." = "cd ../..";
         "...." = "cd ../../..";
-        tree = "tree -C";
         cdd = "cd (mktemp -d)";
       };
       functions = {
