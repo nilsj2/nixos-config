@@ -126,6 +126,7 @@
         };
         advice.defaultBranchName = false;
         help.autocorrect = true;
+        merge.conflictStyle = "zdiff3";
       };
       ignores = [ "nils-testing" ];
       signing = {
