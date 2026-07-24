@@ -435,7 +435,6 @@
       ])
       ++ (lib.optionals (isNvidiaGPU) [
         prismlauncher
-        vesktop
       ]);
 
     username = "nilsj";
