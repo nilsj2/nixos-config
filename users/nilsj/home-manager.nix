@@ -80,6 +80,7 @@
         filters = {
           "text/plain" = "wrap -w 100 | colorize";
           "text/html" = "! w3m -I UTF-8 -T text/html";
+          "application/pdf" = "pdftoppm -singlefile | viu -";
           # "text/calendar" = "calendar";
         };
 
@@ -417,6 +418,8 @@
         playerctl
         brightnessctl
         rofi
+        poppler-utils
+        viu
       ]
       ++ (lib.optionals (!isWSL) [
         wl-clipboard
