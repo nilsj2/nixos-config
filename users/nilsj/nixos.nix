@@ -47,6 +47,11 @@
   security.polkit.enable = true;
   services.displayManager.defaultSession = "sway";
 
+  security.pam.services = {
+    swaylock.enableGnomeKeyring = true;
+    gdm.enableGnomeKeyring = true;
+  };
+
   security.pki.certificates = [
     ''
       -----BEGIN CERTIFICATE-----
