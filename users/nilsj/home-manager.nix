@@ -275,6 +275,7 @@
         "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
         "audio/*" = "vlc.desktop";
         "video/*" = "vlc.desktop";
+        "application/pdf" = "org.kde.okular.desktop";
       };
     };
 
@@ -427,6 +428,7 @@
         hunspellDicts.en_GB-large
         hunspellDicts.sv_SE
         vlc
+        kdePackages.okular
       ])
       ++ (lib.optionals (isNvidiaGPU) [
         vesktop
