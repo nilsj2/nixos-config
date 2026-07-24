@@ -434,6 +434,7 @@
         kdePackages.okular
       ])
       ++ (lib.optionals (isNvidiaGPU) [
+        prismlauncher
         vesktop
       ]);
 
