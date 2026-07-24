@@ -151,6 +151,7 @@
       };
       functions = {
         zigdir = "zig any list-installed | grep (zig version) | sed 's/^[^ ]*\\t//'";
+        fish_greeting = "";
       };
     };
 
