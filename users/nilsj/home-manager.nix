@@ -205,9 +205,15 @@
       style = "native";
       # videoDriver = "vulkan"; # NOTE: Broken since 26.05
 
-      profiles."Nils".sync = {
-        username = "nilsjuto@posteo.net";
-        keyFile = "/home/nilsj/.secrets/anki_key";
+      profiles = {
+        "Nils" = {
+          default = true;
+          sync = {
+            username = "nilsjuto@posteo.net";
+            keyFile = "/home/nilsj/.secrets/anki_key";
+          };
+        };
+        "testing" = { };
       };
     };
 
