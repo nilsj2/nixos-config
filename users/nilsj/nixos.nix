@@ -4,7 +4,7 @@
   environment = {
     localBinInPath = true;
     variables = {
-      CLI_COLOR = "1";
+      CLICOLOR = "1";
       ZIG_BUILD_ERROR_STYLE = "minimal_clear";
     };
   };
