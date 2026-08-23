@@ -15,6 +15,11 @@
     pinentryPackage = pkgs.pinentry-qt;
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+  };
+
   # Configure custom keyboard layout and caps-backspace remapping
   services.xserver.xkb = {
     layout = "se";
