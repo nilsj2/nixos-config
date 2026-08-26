@@ -14,6 +14,7 @@
       imap.host = "posteo.de";
 
       aerc.enable = true;
+      thunderbird.enable = true;
     };
 
     contact = {
@@ -32,12 +33,10 @@
           ];
         };
 
-        vdirsyncer = {
-          enable = true;
-        };
-
+        vdirsyncer.enable = true;
         khard.enable = true;
         khal.enable = true;
+        thunderbird.enable = true;
       };
     };
 
@@ -59,6 +58,7 @@
 
         vdirsyncer.enable = true;
         khal.enable = true;
+        thunderbird.enable = true;
       };
 
       accounts.School = {
