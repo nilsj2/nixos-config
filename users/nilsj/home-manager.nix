@@ -185,10 +185,21 @@
         theme = "light:Ayu Light,dark:Ayu";
         font-size = 11;
         keybind = [
-          "ctrl+h=goto_split:left"
-          "ctrl+l=goto_split:right"
-          "ctrl+j=goto_split:down"
-          "ctrl+k=goto_split:up"
+          "ctrl+a>h=goto_split:left"
+          "ctrl+a>l=goto_split:right"
+          "ctrl+a>j=goto_split:down"
+          "ctrl+a>k=goto_split:up"
+
+          "ctrl+r>h=resize_split:left,50"
+          "ctrl+r>l=resize_split:right,50"
+          "ctrl+r>j=resize_split:down,50"
+          "ctrl+r>k=resize_split:up,50"
+
+          "ctrl+a>p=jump_to_prompt:-1"
+          "ctrl+a>n=jump_to_prompt:1"
+
+          "shift+arrow_up=scroll_page_lines:-1"
+          "shift+arrow_down=scroll_page_lines:1"
         ];
       };
     };
