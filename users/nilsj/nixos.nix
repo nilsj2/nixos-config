@@ -50,7 +50,7 @@
   };
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
-  services.displayManager.defaultSession = "sway";
+  services.displayManager.defaultSession = "gnome";
 
   security.pam.services = {
     swaylock.enableGnomeKeyring = true;
