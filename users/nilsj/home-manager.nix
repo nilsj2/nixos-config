@@ -184,6 +184,12 @@
       settings = {
         theme = "light:Ayu Light,dark:Ayu";
         font-size = 11;
+        keybind = [
+          "ctrl+h=goto_split:left"
+          "ctrl+l=goto_split:right"
+          "ctrl+j=goto_split:down"
+          "ctrl+k=goto_split:up"
+        ];
       };
     };
 
